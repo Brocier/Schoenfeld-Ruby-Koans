@@ -14,6 +14,10 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+    a, b, c = [a, b, c].sort
+    raise TriangleError unless a > 0
+    raise TriangleError unless a + b > c
+
     if (a == b && b == c)
 	return :equilateral
     elsif (a == b || a == c || b == c)
